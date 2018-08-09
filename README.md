@@ -1,2 +1,5 @@
 # pdf2boxart
-Converts multi-page PDFs of images into a single-spread box/cover art JPEG
+
+Recently, I"ve been wanting to save the cover art on some old CDs and VHS tapes that are at risk of being lost to time.  Most scanners make it very easy to scan each side of a box consecutively into a single multi-page PDF file, but I found myself searching for a way to automatically analyze these PDFs and use them to generate a box art spread.
+
+Unfortunately, even though there are many pdf2-somethings out there for doing different types of PDF processing, I couldn't find a single tool to do all the necessary steps.  This small pdf2boxart script is a simple way to do the basic processing I needed.  It uses pdf2image to read each page into an image.  Then it automatically segments the image from the page by convolving an averaging filter across it, assuming a mostly solid background.  Lastly, it uses PIL to combine all the segmented images into a single spread of cover artwork.  It's not particularly complicated, but hopefully parts of it prove useful to others.
